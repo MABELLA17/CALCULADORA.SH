@@ -1,4 +1,3 @@
-#opções--------------------------------------------------------------------------------------
 echo "digite a operação que deseja realizar: " 
 echo "1) SOMA"
 echo "2) SUBTRAÇÃO"
@@ -10,70 +9,64 @@ echo "Opção desejada: "
 read op
 
 case $op in
-#soma----------------------------------------------------------------------------------------
 		1) 
 			echo "Digite o primeiro número: "
-			read $num1
+			read num1
 			echo "Digite o segundo número: " 
-			read $num2
-			resultado=$(echo "$num1+$num2" | bc)
-			echo "Soma final: $resultado"
+			read num2
+			echo "Soma final: "
+			echo "$num1+$num2" | bc
 		;;
 
-#subtração-----------------------------------------------------------------------------------
 		2)   
 			echo "Digite o primeiro número: " 
-			read $num1
+			read num1
 			echo "Digite o segundo número: " 
-			read $num2
-			resultado=$(echo "$num1-$num2" | bc)
-			echo "Subtração final: $resultado"
+			read num2
+			echo "Subtração final: "
+			echo "$num1-$num2" | bc
 		;;
 
-#multiplicação-------------------------------------------------------------------------------
 		3)     
 			echo "Digite o primeiro número: " 
-			read $num1
+			read num1
 			echo "Digite o segundo número: " 
-			read $num2
-			resultado=$(echo "$num1*$num2" | bc)
-			echo "Multiplicação final: $resultado"
+			read num2
+			echo "Multiplicação final: "
+			echo "$num1*$num2" | bc
 		;;
 
-#divisão------------------------------------------------------------------------------------
 		 4)
 			echo "Digite o primeiro número: " 
-			read $num1
+			read num1
 			echo "Digite o segundo número: " 
 			read $num2
-			if [$num2 = 0]; then
+			if [num2 = 0]; then
 			echo "ERRADO! Não é possível dividir por 0."
 			else
-			resultado=$(echo "scale=6; $num1/$num2" | bc)
-			echo "Divisão final: $resultado"
+			echo "Divisão final: "
+			echo "scale=6; $num1/$num2" | bc
 			fi
 		;;
 
-#raíz quadrada-------------------------------------------------------------------------------
 		5)	
 			echo "Digite um número: " 
-			read $num
-			if [$num = 0]; then
+			read num
+			if [num = 0]; then
 			echo "ERRADO! Não é possível fazer raiz quadrada com 0"
 			else
-			resultado=$(echo "sqrt($num)" | bc)
-			echo "Raiz quadrada final: $resultado"
+			echo "Raiz quadrada final: "
+			echo "sqrt($num)" | bc
 			fi
 		;;
 
-#potência------------------------------------------------------------------------------------
 		6)      
 			echo "Digite um número para ser a base: " 
-			read $num1
+			read num1
 			echo "Digite um número para ser o expoente: " 
-			read $num2
-			resultado=$(echo "$num1**$num2" | bc)
-			echo "Potência final: $resultado"
+			read num2
+			echo "Potência final: "
+			echo "$num1**$num2" | bc
 		;;
 esac
 
