@@ -1,3 +1,4 @@
+#opções--------------------------------------------------------------------------------------
 echo "digite a operação que deseja realizar: " 
 echo "1) SOMA"
 echo "2) SUBTRAÇÃO"
@@ -18,6 +19,7 @@ case $op in
 			echo "$num1+$num2" | bc
 		;;
 
+
 		2)   
 			echo "Digite o primeiro número: " 
 			read num1
@@ -26,6 +28,7 @@ case $op in
 			echo "Subtração final: "
 			echo "$num1-$num2" | bc
 		;;
+
 
 		3)     
 			echo "Digite o primeiro número: " 
@@ -36,12 +39,13 @@ case $op in
 			echo "$num1*$num2" | bc
 		;;
 
+
 		 4)
 			echo "Digite o primeiro número: " 
 			read num1
 			echo "Digite o segundo número: " 
-			read $num2
-			if [num2 = 0]; then
+			read num2
+			if [$num2 = 0]; then
 			echo "ERRADO! Não é possível dividir por 0."
 			else
 			echo "Divisão final: "
@@ -49,10 +53,11 @@ case $op in
 			fi
 		;;
 
+
 		5)	
 			echo "Digite um número: " 
 			read num
-			if [num = 0]; then
+			if [$num = 0]; then
 			echo "ERRADO! Não é possível fazer raiz quadrada com 0"
 			else
 			echo "Raiz quadrada final: "
@@ -60,13 +65,14 @@ case $op in
 			fi
 		;;
 
+
 		6)      
 			echo "Digite um número para ser a base: " 
 			read num1
 			echo "Digite um número para ser o expoente: " 
 			read num2
-			echo "Potência final: "
-			echo "$num1**$num2" | bc
+			echo "Potência final: $resultado"
+			echo "$num1^$num2" | bc
 		;;
 esac
 
