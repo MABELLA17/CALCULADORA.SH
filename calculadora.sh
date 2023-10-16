@@ -71,7 +71,7 @@ case $op in
 			read num1
 			echo "Digite um número para ser o expoente: " 
 			read num2
-			echo "Potência final: $resultado"
+			echo "Potência final: "
 			echo "$num1^$num2" | bc
 		;;
 esac
